@@ -125,10 +125,11 @@ CGMiner specific configuration options:
                           included static libusb)
 
 Basic *nix build instructions:
+	*Important: You need to set CFLAGS -fcommon otherwise the build will fail!*
+
 	To actually build:
 
-	./autogen.sh	# only needed if building from git repo
-	CFLAGS="-O2 -Wall -march=native" ./configure <options>
+	./configure <options> CFLAGS="-O2 -Wall -march=native -fcommon"
 
 	No installation is necessary. You may run cgminer from the build
 	directory directly, but you may do make install if you wish to install
